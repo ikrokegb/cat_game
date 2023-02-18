@@ -70,12 +70,10 @@ func _physics_process(delta):
 				$Sprite.play("hero")
 				velocity.x = lerp(velocity.x, 0, 0.1)
 			
-			if Input.is_action_just_pressed("jump"):
-				velocity.y = JUMPFORCE
-				$sound_jump.play()
-				state = States.AIR
-			elif Input.is_action_pressed("down"):
-					$Sprite.play("press_button")
+			#if Input.is_action_just_pressed("jump"):
+				#velocity.y = JUMPFORCE
+				#$sound_jump.play()
+				#state = States.AIR
 			set_direction()
 			move_and_fall(false)
 			fire()
