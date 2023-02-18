@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/upgrade1.ogg-a933d6457e55ba92ba9500d3d1fe2a2a.oggstr"
+
+[deps]
+
+source_file="res://ASSETS/objects/Platformer-25-Assets/upgrade1.ogg"
+dest_files=[ "res://.import/upgrade1.ogg-a933d6457e55ba92ba9500d3d1fe2a2a.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://hero_spriteframes.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://hero.gd" type="Script" id=2]
+[ext_resource path="res://ASSETS/soundsandmusic/sounds/jump1.ogg" type="AudioStream" id=3]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 20.5, 35.5 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10.5, 35.5 )
+
+[node name="hero" type="KinematicBody2D"]
+collision_mask = 6
+script = ExtResource( 2 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( -2.5, 0 )
+scale = Vector2( 0.91, 0.96 )
+frames = ExtResource( 1 )
+animation = "press_button"
+speed_scale = 2.0
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -5.5, 0.5 )
+shape = SubResource( 3 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="sound_jump" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+volume_db = -19.724
+
+[node name="wall_checker" type="RayCast2D" parent="."]
+rotation = -1.5708
+enabled = true
+cast_to = Vector2( -2.44784e-06, 56 )
+collision_mask = 2
+
+[node name="ladder_checker" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ladder_checker"]
+position = Vector2( -4.5, 0.5 )
+shape = SubResource( 2 )
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="body_entered" from="ladder_checker" to="." method="_on_ladder_checker_body_entered"]
+[connection signal="body_exited" from="ladder_checker" to="." method="_on_ladder_checker_body_exited"]
