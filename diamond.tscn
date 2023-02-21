@@ -1,15 +1,18 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://diamond.gd" type="Script" id=1]
-[ext_resource path="res://ASSETS/sprites/diamonds/diamond_1.png" type="Texture" id=2]
-[ext_resource path="res://ASSETS/sprites/diamonds/diamond_2.png" type="Texture" id=3]
+[ext_resource path="res://ASSETS/SPRITES/meat_coin_frames/meat_coin_2.png" type="Texture" id=2]
+[ext_resource path="res://ASSETS/SPRITES/meat_coin_frames/meat_coin_3.png" type="Texture" id=3]
 [ext_resource path="res://ASSETS/soundsandmusic/sounds/confirmation_002.ogg" type="AudioStream" id=4]
+[ext_resource path="res://ASSETS/SPRITES/meat_coin_frames/meat_coin_4.png" type="Texture" id=5]
+[ext_resource path="res://ASSETS/SPRITES/meat_coin_frames/meat_coin_1.png" type="Texture" id=6]
+[ext_resource path="res://ASSETS/SPRITES/meat_coin_frames/meat_coin_5.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "spin",
 "speed": 5.0
@@ -56,9 +59,10 @@ rotation = -2.32652
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.5875, 0.5875 )
 frames = SubResource( 2 )
 animation = "spin"
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

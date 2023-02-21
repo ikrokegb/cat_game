@@ -5,10 +5,10 @@
 [ext_resource path="res://ASSETS/soundsandmusic/sounds/jump1.ogg" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 20.5, 35.5 )
+extents = Vector2( 20.5, 30.5 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 10.5, 35.5 )
+extents = Vector2( 10.5, 30 )
 
 [node name="hero" type="KinematicBody2D"]
 collision_mask = 6
@@ -19,11 +19,12 @@ position = Vector2( -2.5, 0 )
 scale = Vector2( 0.91, 0.96 )
 frames = ExtResource( 1 )
 animation = "press_button"
+frame = 1
 speed_scale = 2.0
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -5.5, 0.5 )
+position = Vector2( -5.5, 3.5 )
 shape = SubResource( 3 )
 
 [node name="Timer" type="Timer" parent="."]
@@ -44,7 +45,7 @@ collision_layer = 0
 collision_mask = 64
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ladder_checker"]
-position = Vector2( -4.5, 0.5 )
+position = Vector2( -4.5, 3 )
 shape = SubResource( 2 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

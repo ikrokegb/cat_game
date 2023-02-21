@@ -48,6 +48,7 @@ func _physics_process(delta):
 			elif should_climb_ladder():
 					state = States.LADDER
 					continue
+					
 			if Input.is_action_pressed("right"):
 				if Input.is_action_pressed("run"):
 					velocity.x = lerp(velocity.x, RUNSPEED, 0.1)
@@ -66,14 +67,18 @@ func _physics_process(delta):
 					$Sprite.set_speed_scale(6.0)
 				$Sprite.play("walk")
 				$Sprite.flip_h = true
+			elif Input.is_action_pressed("down"):
+				$Sprite.play("press_button")
+				velocity.x = 0
 			else:
 				$Sprite.play("hero")
 				velocity.x = lerp(velocity.x, 0, 0.1)
 			
-			#if Input.is_action_just_pressed("jump"):
-				#velocity.y = JUMPFORCE
-				#$sound_jump.play()
-				#state = States.AIR
+			if Input.is_action_just_pressed("jump"):
+				velocity.y = JUMPFORCE
+				$sound_jump.play()
+				state = States.AIR
+
 			set_direction()
 			move_and_fall(false)
 			fire()

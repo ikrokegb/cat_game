@@ -45,7 +45,7 @@ animations = [ {
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 8 ), ExtResource( 21 ) ],
-"loop": true,
+"loop": false,
 "name": "press_button",
 "speed": 5.0
 }, {
