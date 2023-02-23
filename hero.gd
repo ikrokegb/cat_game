@@ -201,7 +201,7 @@ func ouch(var enemyposx):
 	
 func add_diamond():
 	diamonds = diamonds + 1
-	print("now i have diamonds: ", diamonds)
+	#print("now i have diamonds: ", diamonds)
 
 
 func _on_Timer_timeout():

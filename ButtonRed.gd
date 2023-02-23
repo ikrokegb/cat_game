@@ -17,7 +17,7 @@ func _physics_process(delta):
 		$AudioStreamPlayer2D.play()
 		onButton = false
 		$topChecker.set_collision_mask_bit(0, false)
-		$CollisionShapeTop.position.y = -15
+		$CollisionShapeTop.position.y = -9
 		$CollisionShapeTop.shape.radius = 2
-		$CollisionShapeTop.shape.height = 12
+		$CollisionShapeTop.shape.height = 34
 		emit_signal("buttonPushed") 

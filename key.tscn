@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://ASSETS/objects/Platformer-25-Assets/keyYellow.png" type="Texture" id=1]
+[ext_resource path="res://ASSETS/SPRITES/key/key_2.png" type="Texture" id=1]
 [ext_resource path="res://key.gd" type="Script" id=2]
 [ext_resource path="res://ASSETS/objects/Platformer-25-Assets/confirmation_002.ogg" type="AudioStream" id=3]
 
@@ -12,6 +12,7 @@ collision_layer = 0
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, 2 )
 scale = Vector2( 0.445312, 0.445312 )
 texture = ExtResource( 1 )
 

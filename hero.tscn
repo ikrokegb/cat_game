@@ -18,8 +18,7 @@ script = ExtResource( 2 )
 position = Vector2( -2.5, 0 )
 scale = Vector2( 0.91, 0.96 )
 frames = ExtResource( 1 )
-animation = "press_button"
-frame = 1
+animation = "hero"
 speed_scale = 2.0
 playing = true
 

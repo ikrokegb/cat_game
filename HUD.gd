@@ -13,7 +13,7 @@ func _ready():
 func _on_diamond_collected():
 	diamonds = diamonds + 1
 	_ready()
-	if diamonds == 3:
+	if diamonds == 20:
 		get_tree().change_scene("res://win_screen.tscn")
 
 func load_hearts():
