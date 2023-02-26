@@ -6,7 +6,7 @@ func _on_key_body_entered(body):
 	visible = false
 	set_collision_mask_bit(0, false)
 	$SoundKey.play()
-	hud.key.texture = load("res://ASSETS/objects/Platformer-25-Assets/hudKey_yellow.png")
+	hud.key.texture = load("res://ASSETS/SPRITES/panel/key.png")
 	hud.hasKey = true
 
 

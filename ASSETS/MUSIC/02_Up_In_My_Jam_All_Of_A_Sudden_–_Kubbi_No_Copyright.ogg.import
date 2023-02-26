@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/02_Up_In_My_Jam_All_Of_A_Sudden_–_Kubbi_No_Copyright.ogg-9ee05f9bb6ceadaa486322249f5836fe.oggstr"
+
+[deps]
+
+source_file="res://ASSETS/MUSIC/02_Up_In_My_Jam_All_Of_A_Sudden_–_Kubbi_No_Copyright.ogg"
+dest_files=[ "res://.import/02_Up_In_My_Jam_All_Of_A_Sudden_–_Kubbi_No_Copyright.ogg-9ee05f9bb6ceadaa486322249f5836fe.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

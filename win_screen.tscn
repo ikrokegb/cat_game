@@ -1,15 +1,33 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://ASSETS/objects/platformer-p15-assets/more fonts/Sniglet-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://ASSETS/FONTS/Sonic 1 Title Screen Filled.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://back_to_menu_Button.gd" type="Script" id=2]
+[ext_resource path="res://ASSETS/SPRITES/win_menu/win_menu.png" type="Texture" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 80
+outline_size = 4
+outline_color = Color( 0.666667, 0.239216, 0.239216, 1 )
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 50
+size = 30
+outline_color = Color( 0.996078, 0.764706, 0.764706, 1 )
 font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.101961, 0.027451, 0.027451, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.101961, 0.027451, 0.027451, 1 )
+border_color = Color( 0.811765, 0.752941, 0.752941, 1 )
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.796078, 0.435294, 0.435294, 1 )
 
 [node name="win_screen" type="Control"]
 margin_right = 40.0
@@ -18,23 +36,40 @@ margin_bottom = 40.0
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_right = 1024.0
 margin_bottom = 601.0
+color = Color( 0.796078, 0.435294, 0.435294, 1 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = 372.0
-margin_top = 70.0
-margin_right = 783.0
-margin_bottom = 250.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+margin_left = 256.0
+margin_top = 32.0
+margin_right = 777.0
+margin_bottom = 212.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "you win!"
 
 [node name="back_to_menu_Button" type="Button" parent="."]
-margin_left = 385.0
-margin_top = 240.0
-margin_right = 709.0
-margin_bottom = 375.0
+margin_left = 352.0
+margin_top = 416.0
+margin_right = 704.0
+margin_bottom = 551.0
+custom_colors/font_color_focus = Color( 1, 0.541176, 0.541176, 1 )
+custom_colors/font_color = Color( 1, 0.866667, 0.866667, 1 )
 custom_fonts/font = SubResource( 2 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/normal = SubResource( 3 )
 text = "main menu"
 script = ExtResource( 2 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 418.0
+margin_top = 198.0
+margin_right = 616.0
+margin_bottom = 384.0
+custom_styles/panel = SubResource( 4 )
+
+[node name="WinMenu" type="Sprite" parent="Panel"]
+position = Vector2( 96, 95 )
+scale = Vector2( 1.86, 1.86 )
+texture = ExtResource( 3 )
 
 [connection signal="pressed" from="back_to_menu_Button" to="back_to_menu_Button" method="_on_back_to_menu_Button_pressed"]

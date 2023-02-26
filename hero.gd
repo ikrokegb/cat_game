@@ -110,15 +110,16 @@ func _physics_process(delta):
 				Input.action_release("up")
 				Input.action_release("down")
 				continue
-			elif Input.is_action_just_pressed("jump"):
-				Input.action_release("down")
-				Input.action_release("up")
-				velocity.y = JUMPFORCE * 0.7
-				state = States.AIR
-				continue
+			#elif Input.is_action_just_pressed("jump"):
+				#Input.action_release("down")
+				#Input.action_release("up")
+				#velocity.y = JUMPFORCE * 0.7
+				#state = States.AIR
+				#continue
 			
 			if Input.is_action_pressed("down") or Input.is_action_pressed("up") or Input.is_action_pressed("left") or Input.is_action_pressed("right"):
 				$Sprite.play("climb")
+				$Sprite.set_speed_scale(0.9)
 			else:
 				$Sprite.stop()
 				
@@ -201,7 +202,6 @@ func ouch(var enemyposx):
 	
 func add_diamond():
 	diamonds = diamonds + 1
-	#print("now i have diamonds: ", diamonds)
 
 
 func _on_Timer_timeout():
